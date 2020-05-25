@@ -5,6 +5,7 @@ set(CMAKE_C_VISIBILITY_PRESET hidden)
 set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
+set(CMAKE_BUILD_TYPE Debug)
 
 option(LOCKS "LOCKS" OFF)
 option(FOOTERS "FOOTERS" OFF)
@@ -67,5 +68,4 @@ target_include_directories(dlalloc PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOUR
 
 add_executable(test src/test.c src/log.c)
 target_link_libraries(test PRIVATE dlalloc)
-target_compile_definitions(test PRIVATE DEBUG=1)
 target_include_directories(test PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
